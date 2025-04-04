@@ -33,6 +33,7 @@ def test_http_request_to_bytes():
     # Проверяем тело запроса
     assert '{"sender":"+1234567890","recipient":"+0987654321","message":"Hello, this is a test message!"}' in raw_request
 
+
 #Проверка, что метод .from_bytes() правильно разбирает HTTP-запрос.
 def test_http_request_from_bytes():
     binary_data = (
