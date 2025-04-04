@@ -13,9 +13,21 @@ class HTTPRequest:
         """
         Преобразует объект HTTP-запроса в последовательность байт.
         """
-        headers_str = "\r\n".join(f"{k}: {v}" for k, v in self.headers.items())
+        # Создаем копию заголовков, чтобы не изменять оригинальные данные
+        headers = self.headers.copy()
+
+        # Формируем тело запроса в формате JSON
         body_str = json.dumps(self.body)
+
+        # Добавляем заголовок Content-Length
+        headers["Content-Length"] = str(len(body_str.encode("utf-8")))
+
+        # Формируем заголовки в виде строки
+        headers_str = "\r\n".join(f"{k}: {v}" for k, v in headers.items())
+
+        # Собираем полный HTTP-запрос
         request = f"{self.method} {self.path} HTTP/1.1\r\n{headers_str}\r\n\r\n{body_str}"
+
         return request.encode("utf-8")
 
     @classmethod

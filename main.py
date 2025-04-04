@@ -51,12 +51,6 @@ def main():
     body = {"sender": args.sender, "recipient": args.recipient, "message": args.message}
     request = HTTPRequest("POST", "/send_sms", headers, body)
 
-    # Выводим полный HTTP-запрос для отладки
-    print(request.to_bytes())
-    print("=== Отправляемый HTTP-запрос ===")
-    print(request.to_bytes().decode("utf-8"))
-    print("===============================")
-
     # Отправляем запрос
     url = config["url"]
     host, port = url.replace("http://", "").split(":")
@@ -69,7 +63,6 @@ def main():
 
     # Парсим ответ
     try:
-        print(f'ответ: {response_data.decode("utf-8")}')
         response = HTTPResponse.from_bytes(response_data)
     except Exception as e:
         print(f"Ошибка при парсинге ответа: {e}")

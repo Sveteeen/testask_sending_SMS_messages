@@ -23,3 +23,7 @@
 2025-04-04 20:56:14,944 - INFO - Received response: status_code=400, body={}
 2025-04-04 21:12:48,514 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
 2025-04-04 21:12:48,521 - INFO - Received response: status_code=400, body={}
+2025-04-04 21:31:36,828 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 21:31:36,862 - INFO - Received response: status_code=200, body={'status': 'success', 'message_id': '123456'}
+2025-04-04 21:33:24,048 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 21:33:24,061 - INFO - Received response: status_code=200, body={'status': 'success', 'message_id': '123456'}
