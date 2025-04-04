@@ -1,6 +1,7 @@
 from typing import Dict
 import json
 
+
 class HTTPResponse:
     def __init__(self, status_code: int, headers: Dict[str, str], body: dict):
         self.status_code = status_code

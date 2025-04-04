@@ -1,0 +1,25 @@
+2025-04-04 18:29:43,394 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:30:14,343 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:31:53,446 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:31:53,460 - INFO - Received response: status_code=400, body={}
+2025-04-04 18:44:44,724 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:44:44,729 - INFO - Received response: status_code=400, body={}
+2025-04-04 18:52:49,081 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:52:49,088 - INFO - Received response: status_code=400, body={}
+2025-04-04 18:59:20,778 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 18:59:20,784 - INFO - Received response: status_code=400, body={}
+2025-04-04 19:23:35,183 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 19:23:35,188 - INFO - Received response: status_code=400, body={}
+2025-04-04 19:24:14,083 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 19:24:14,089 - INFO - Received response: status_code=400, body={}
+2025-04-04 20:05:05,322 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 20:05:40,733 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 20:05:40,744 - INFO - Received response: status_code=400, body={}
+2025-04-04 20:40:33,727 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 20:40:33,734 - INFO - Received response: status_code=400, body={}
+2025-04-04 20:50:53,347 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 20:50:53,353 - INFO - Received response: status_code=400, body={}
+2025-04-04 20:56:14,938 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 20:56:14,944 - INFO - Received response: status_code=400, body={}
+2025-04-04 21:12:48,514 - INFO - Sending SMS: sender=+1234567890, recipient=+0987654321, message=Hello, this is a test message!
+2025-04-04 21:12:48,521 - INFO - Received response: status_code=400, body={}

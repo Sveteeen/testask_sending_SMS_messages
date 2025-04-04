@@ -26,7 +26,7 @@ def send_request(request: HTTPRequest, host: str, port: int) -> bytes:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             sock.connect((host, port))
             sock.sendall(request.to_bytes())
-            response = sock.recv(4096)
+            response = sock.recv(40960)
         return response
     except ConnectionRefusedError:
         print(f"Ошибка: Не удалось подключиться к серверу {host}:{port}.")
@@ -51,14 +51,16 @@ def main():
     body = {"sender": args.sender, "recipient": args.recipient, "message": args.message}
     request = HTTPRequest("POST", "/send_sms", headers, body)
 
+    # Выводим полный HTTP-запрос для отладки
+    print(request.to_bytes())
+    print("=== Отправляемый HTTP-запрос ===")
+    print(request.to_bytes().decode("utf-8"))
+    print("===============================")
+
     # Отправляем запрос
     url = config["url"]
-    if ":" in url:
-        host, port = url.replace("http://", "").split(":")
-        port = int(port)
-    else:
-        host = url.replace("http://", "")
-        port = 80
+    host, port = url.replace("http://", "").split(":")
+    port = int(port)
     try:
         response_data = send_request(request, host, port)
     except Exception as e:
@@ -67,6 +69,7 @@ def main():
 
     # Парсим ответ
     try:
+        print(f'ответ: {response_data.decode("utf-8")}')
         response = HTTPResponse.from_bytes(response_data)
     except Exception as e:
         print(f"Ошибка при парсинге ответа: {e}")
