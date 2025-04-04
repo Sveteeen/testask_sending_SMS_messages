@@ -1,0 +1,4 @@
+#[sms_platform]
+url = "http://localhost:4010"
+username = "sveteen"
+password = "JOKML45"
