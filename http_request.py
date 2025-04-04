@@ -14,8 +14,8 @@ class HTTPRequest:
         Преобразует объект HTTP-запроса в последовательность байт.
         """
         headers = self.headers.copy()
-        body_str = json.dumps(self.body)
-        headers["Content-Length"] = str(len(body_str.encode("utf-8")))
+        body_str = json.dumps(self.body, separators=(",", ":"))  # Убираем лишние пробелы
+        headers["Content-Length"] = str(len(body_str.encode("utf-8")))  # Вычисляем длину тела
         headers_str = "\r\n".join(f"{k}: {v}" for k, v in headers.items())
 
         # Собираем полный HTTP-запрос
