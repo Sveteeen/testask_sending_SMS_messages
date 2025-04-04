@@ -18,7 +18,7 @@ class HTTPResponse:
         return response.encode("utf-8")
 
     @classmethod
-    def from_bytes(cls, binary_data: bytes):
+    def from_bytes(cls, binary_data: bytes) -> 'HTTPResponse':
         """
         Создает объект HTTPResponse из последовательности байт.
         """

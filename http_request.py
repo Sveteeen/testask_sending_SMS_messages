@@ -13,16 +13,9 @@ class HTTPRequest:
         """
         Преобразует объект HTTP-запроса в последовательность байт.
         """
-        # Создаем копию заголовков, чтобы не изменять оригинальные данные
         headers = self.headers.copy()
-
-        # Формируем тело запроса в формате JSON
         body_str = json.dumps(self.body)
-
-        # Добавляем заголовок Content-Length
         headers["Content-Length"] = str(len(body_str.encode("utf-8")))
-
-        # Формируем заголовки в виде строки
         headers_str = "\r\n".join(f"{k}: {v}" for k, v in headers.items())
 
         # Собираем полный HTTP-запрос
@@ -31,7 +24,7 @@ class HTTPRequest:
         return request.encode("utf-8")
 
     @classmethod
-    def from_bytes(cls, binary_data: bytes):
+    def from_bytes(cls, binary_data: bytes) -> 'HTTPRequest':
         """
         Создает объект HTTP-запроса из последовательности байт.
         """
@@ -46,8 +39,6 @@ class HTTPRequest:
             headers[key] = value
             i += 1
 
-        # Остальная часть содержит тело запроса
         body = json.loads("\r\n".join(lines[i + 1:]))
 
-        # Возвращаем новый объект HTTPRequest
         return cls(method, path, headers, body)
